@@ -18,7 +18,12 @@ app.use(
     cors({
         credentials: true,
         methods:["GET","POST","PUT","DELETE"],
-    })
+    }),
+    function(req, res, next) {  
+        res.header('Access-Control-Allow-Origin', req.headers.origin);
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+   }
 )
 
 // import all routes here 
@@ -30,6 +35,4 @@ import Router from "./router/router.js";
 app.use('/api/user',user);
 app.use('/api/manage',Router)
 app.use('/api/post',post);
-
-// error middlewares
 app.use('/api/reel',reel);
