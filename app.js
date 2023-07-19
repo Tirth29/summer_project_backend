@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 
 app.use(function (req, res, next) {
     const corsWhitelist = [
-  "https://imaginative-cannoli-3e8a69.netlify.app/",
+  "https://imaginative-cannoli-3e8a69.netlify.app",
   "http://127.0.0.1:5173",
   "http://localhost:5173",
   "http://localhost:5173/",
